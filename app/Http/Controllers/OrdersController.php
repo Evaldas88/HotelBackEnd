@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotels;
 use App\Models\Orders;
+
 use App\Models\Countries;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class OrdersController extends Controller
                 $country = Countries::find($hotel->country_id);
                 $order['country_name'] = $country->name;
             } else {
-                $order['country_name'] = 'Nepriskirta';
+                $order['country_name'] = 'Not assigned';
             }
             $order['hotel_name'] = $hotel->name;
             $order['price'] = $hotel->price;
