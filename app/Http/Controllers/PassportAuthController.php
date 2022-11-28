@@ -40,7 +40,7 @@ class PassportAuthController extends Controller
                 return response()->json(['message' => 'No application encryption key has been specified.'], 401);
             }
         } catch (Exception $e) {
-            return response()->json(['message' => 'Toks vartotojas jau egzistuoja'], 401);
+            return response()->json(['message' => 'This name already used'], 401);
         }
     }
 
